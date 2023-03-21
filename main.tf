@@ -46,7 +46,7 @@ resource "azurerm_network_security_group" "telemachus-nsg" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "22"
-    source_address_prefix      = "*"
+    source_address_prefixes    = ["165.225.0.0/17","137.83.128.0/18","165.225.192.0/18","104.129.192.0/20","185.46.212.0/22","199.168.148.0/22","209.51.184.0/26","213.152.228.0/24","216.218.133.192/26","216.52.207.64/26","27.251.211.238/32","64.74.126.64/26","70.39.159.0/24","72.52.96.0/26","8.25.203.0/24","89.167.131.0/24","136.226.0.0/16","147.161.128.0/17"]
     destination_address_prefix = "*"
   }
 }
@@ -108,8 +108,8 @@ resource "azurerm_linux_virtual_machine" "telemachus-vm" {
   }
   source_image_reference {
     publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "20.04-LTS" 
+    offer     = "0001-com-ubuntu-server-jammy"
+    sku       = "22_04-lts-gen2"
     version   = "latest"
   }
   computer_name                   = "telemachus-vm"
