@@ -100,7 +100,7 @@ resource "azurerm_linux_virtual_machine" "telemachus-vm" {
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
   network_interface_ids = [azurerm_network_interface.telemachus-nic.id]
-  size                  = "Standard_DS1_v2"
+  size                  = "Standard_B4ms"
   os_disk {
     name                 = "telemachus-os"
     caching              = "ReadWrite"
